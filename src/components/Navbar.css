@@ -1,0 +1,206 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ffffff, #a0a0a0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  background: linear-gradient(to right, #2196f3, #f50057);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+}
+
+.navbar-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-desktop {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+}
+
+.navbar-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+
+.navbar-link:hover {
+  color: #2196f3;
+  transform: translateY(-2px);
+}
+
+.navbar-link-active {
+  color: #2196f3;
+}
+
+.navbar-link-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(to right, #2196f3, #f50057);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.5);
+}
+
+.navbar-link-indicator-active {
+  width: 100%;
+}
+
+.navbar-icon-button {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease !important;
+  margin-left: 1rem !important;
+}
+
+.navbar-icon-button:hover {
+  color: #2196f3 !important;
+  transform: rotate(30deg) scale(1.1) !important;
+}
+
+.navbar-mobile-button-container {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-button-container {
+    display: none;
+  }
+}
+
+.navbar-mobile-button {
+  color: rgba(255, 255, 255, 0.8);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.navbar-mobile-button:hover {
+  color: #2196f3;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-mobile-button:focus {
+  outline: none;
+}
+
+.navbar-mobile-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.navbar-mobile-menu {
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-menu {
+    display: none;
+  }
+}
+
+.navbar-mobile-menu-open {
+  max-height: 24rem;
+  opacity: 1;
+}
+
+.navbar-mobile-menu-closed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.navbar-mobile-links {
+  padding: 0.8rem 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navbar-mobile-link {
+  display: block;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+.navbar-mobile-link:hover {
+  color: #2196f3;
+  background-color: rgba(255, 255, 255, 0.07);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-mobile-link-active {
+  color: #2196f3;
+  background-color: rgba(33, 150, 243, 0.1);
+  border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+.navbar-mobile-icon-container {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+} 
