@@ -25,7 +25,7 @@ const Home = () => {
             Hi, I'm Joel Obi 👋
           </Typography>
           <Typography variant="h5" color="text.secondary" paragraph>
-            Full-Stack Developer & Technology Enthusiast
+            Aspiring Software Engineer & Technology Enthusiast
           </Typography>
         </motion.div>
 

@@ -72,7 +72,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="navbar-logo"
           >
-            Joel Obi
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Joel Obi</Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -93,11 +93,28 @@ const Navbar = () => {
                 >
                   {item.label}
                   <motion.span
-                    className={`navbar-link-indicator ${
-                      location.pathname === item.path ? 'navbar-link-indicator-active' : ''
-                    }`}
-                    layoutId="navbar-active-indicator"
-                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                    className="navbar-link-indicator"
+                    style={{
+                      width: location.pathname === item.path ? '100%' : '0%',
+                      opacity: location.pathname === item.path ? 1 : 0,
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      height: '2px',
+                      background: 'linear-gradient(to right, #2196f3, #f50057)',
+                      boxShadow: '0 0 8px rgba(33, 150, 243, 0.5)',
+                      borderRadius: '4px'
+                    }}
+                    animate={{
+                      width: location.pathname === item.path ? '100%' : '0%',
+                      opacity: location.pathname === item.path ? 1 : 0
+                    }}
+                    transition={{ 
+                      type: 'spring', 
+                      stiffness: 350, 
+                      damping: 30,
+                      delay: location.pathname === item.path ? 0 : 0.1
+                    }}
                   />
                 </Link>
               </motion.div>
@@ -151,11 +168,11 @@ const Navbar = () => {
         {isMenuOpen && (
           <motion.div
             className="navbar-mobile-menu navbar-mobile-menu-open"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ 
-              duration: 0.4, 
+              duration: 0.3, 
               ease: "easeInOut" 
             }}
           >
@@ -165,9 +182,10 @@ const Navbar = () => {
                   key={item.path}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
                   transition={{ 
-                    delay: i * 0.1,
-                    duration: 0.3 
+                    delay: i * 0.05,
+                    duration: 0.2 
                   }}
                 >
                   <Link
@@ -187,7 +205,7 @@ const Navbar = () => {
                 className="navbar-mobile-icon-container"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
+                transition={{ delay: 0.3, duration: 0.2 }}
               >
               </motion.div>
             </motion.div>
