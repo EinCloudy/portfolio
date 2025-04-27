@@ -2,8 +2,12 @@
   width: 100%;
   min-height: 100vh;
   margin: 0;
-  padding-top: 4rem; /* Für die Navbar */
   text-align: center;
+  padding-top: 4rem; /* Permanent space for navbar */
+}
+
+#root.with-navbar {
+  padding-top: 4rem; /* Für die Navbar */
 }
 
 .logo {

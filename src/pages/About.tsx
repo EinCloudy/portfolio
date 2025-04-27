@@ -18,7 +18,7 @@ const About = () => {
     },
     {
       name: "Databases",
-      skills: ['MySQL', 'MongoDB', 'PostgreSQL', 'InfluxDB']
+      skills: ['MySQL', 'MongoDB', 'PostgreSQL', 'InfluxDB', 'Redis']
     },
     {
       name: "Platforms & Hardware",

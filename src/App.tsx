@@ -1,8 +1,8 @@
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { createTheme } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -144,18 +144,100 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <LoadingScreen />;
-  }
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      setTimeout(() => {
+        document.body.style.overflow = '';
+      }, 1000);
+    }
+  }, [loading]);
+
+  const mainContentVariants = {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: [0.43, 0.13, 0.23, 0.96],
+        delay: 0.5
+      }
+    }
+  };
+
+  const navbarVariants = {
+    initial: {
+      opacity: 0,
+      y: -10
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.43, 0.13, 0.23, 0.96],
+        delay: 0.7
+      }
+    }
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
         <ScrollToTop />
-        <Navbar />
-        <AnimatedRoutes />
-        <Footer />
+        <Box sx={{ 
+          position: 'relative',
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden'
+        }}>
+          <AnimatePresence mode="wait">
+            {loading && <LoadingScreen key="loading" />}
+          </AnimatePresence>
+          
+          <motion.div
+            variants={mainContentVariants}
+            initial="initial"
+            animate={!loading ? "animate" : "initial"}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              flex: 1,
+              width: '100%'
+            }}
+          >
+            <motion.div
+              variants={navbarVariants}
+              initial="initial"
+              animate={!loading ? "animate" : "initial"}
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                zIndex: 1000
+              }}
+            >
+              <Navbar />
+            </motion.div>
+            
+            <Box component="main" sx={{ 
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <AnimatedRoutes />
+            </Box>
+            <Footer />
+          </motion.div>
+        </Box>
       </Router>
     </ThemeProvider>
   );
