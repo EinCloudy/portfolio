@@ -244,7 +244,7 @@ const About = () => {
           About Me
         </Typography>
         <Typography variant="body1" paragraph>
-          Hello! I'm Joel Obi, a 20-year-old developer with a passion for technology and programming.
+          Hello! I'm Joel Obi, a 21-year-old developer with a passion for technology and programming.
           I've been working with Java since 2018, web development and Python since 2019, and I also have
           experience with Swift, C# and C++ (Arduino).
         </Typography>
