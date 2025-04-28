@@ -16,13 +16,18 @@ const projects = [
   },
   {
     title: 'Home Automation',
-    description: 'Smart home system with Raspberry Pi and various sensors',
-    technologies: ['Home Assistant', 'Raspberry Pi', 'Python'],
+    description: 'Smart home system with Home Assistant and various sensors',
+    technologies: ['Home Assistant', 'Raspberry Pi', 'Python', 'NodeRED', 'MQTT', 'Zigbee', 'Homebridge'],
   },
   {
     title: 'Network Infrastructure',
     description: 'Setup and management of a private network with various services',
-    technologies: ['Docker', 'Ubuntu', 'Next Cloud', 'Grafana'],
+    technologies: ['Docker', 'Ubuntu', 'Next Cloud', 'Grafana', 'Prometheus', 'OpenID', 'Nginx', 'Cloudflare', 'Proxmox', 'WireGuard', 'Pi-Hole'],
+  },
+  {
+    title: 'Workflow Automation',
+    description: 'Automated workflows with n8n',
+    technologies: ['n8n', 'JavaScript', 'REST API'],
   },
 ];
 
