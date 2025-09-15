@@ -494,7 +494,7 @@ const Resume = () => {
 
         <Box sx={{ textAlign: 'right', mt: 2 }}>
           <Typography variant="body2" color="text.secondary">
-            Updated: May 2024
+            Updated: September 2025
           </Typography>
         </Box>
       </motion.div>
