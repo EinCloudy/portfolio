@@ -11,6 +11,8 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import ComputerIcon from '@mui/icons-material/Computer';
 import StorageIcon from '@mui/icons-material/Storage';
 import BusinessIcon from '@mui/icons-material/Business';
+import ScubaDivingIcon from '@mui/icons-material/ScubaDiving';
+
 import { Interests } from '@mui/icons-material';
 
 const Resume = () => {
@@ -478,6 +480,12 @@ const Resume = () => {
                     <DirectionsBikeIcon />
                   </ListItemIcon>
                   <ListItemText primary="Cycling" />
+                </ListItem>
+                <ListItem>
+                  <ListItemIcon>
+                    <ScubaDivingIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Scuba Diving" />
                 </ListItem>
               </List>
             </Paper>

@@ -5,6 +5,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import ScubaDivingIcon from '@mui/icons-material/ScubaDiving';
 
 const About = () => {
   const skillCategories = [
@@ -44,9 +45,13 @@ const About = () => {
   const hobbies = [
     {
       name: "Motorcycling",
-      description: "My main hobby is riding motorcycles. I love exploring new routes and riding in the mountains.",
+      description: "My main hobby is riding motorcycles. I love exploring new routes and riding in beautiful places.",
       icon: <TwoWheelerIcon sx={{ fontSize: 40 }} />,
-      primary: true
+    },
+    {
+      name: "Scuba Diving",
+      description: "I love to explore the underwater world with scuba diving.",
+      icon: <ScubaDivingIcon sx={{ fontSize: 40 }} />
     },
     {
       name: "Drone Flying",
@@ -67,7 +72,7 @@ const About = () => {
       name: "Mobile Development",
       description: "I develop mobile applications and enjoy creating user-friendly experiences.",
       icon: <SmartphoneIcon sx={{ fontSize: 40 }} />
-    }
+    },
   ];
 
   const containerVariants = {
@@ -248,7 +253,7 @@ const About = () => {
         </Typography>
         <Typography variant="body1" paragraph>
           My goal is to continuously expand my knowledge and discover new technologies.
-          Besides programming, I'm interested in motorcycling, various sports,
+          Besides programming, I'm interested in motorcycling, scuba diving, various sports,
           home automation, and network infrastructure.
         </Typography>
       </motion.div>
@@ -290,8 +295,8 @@ const About = () => {
             <Box 
               key={hobby.name} 
               sx={{ 
-                flexBasis: { xs: '100%', sm: '45%', md: '28%', lg: hobby.primary ? '38%' : '28%' },
-                minWidth: { xs: '100%', sm: '45%', md: '28%', lg: hobby.primary ? '38%' : '28%' },
+                flexBasis: { xs: '100%', sm: '45%', md: '28%', lg: '28%' },
+                minWidth: { xs: '100%', sm: '45%', md: '28%', lg: '28%' },
                 display: 'flex'
               }}
             >
@@ -308,7 +313,7 @@ const About = () => {
                     p: 3,
                     '&::before': {
                       ...hobbyCardStyle['&::before'],
-                      background: hobby.primary ? 'linear-gradient(90deg, #2196f3, #f50057)' : 'rgba(255, 255, 255, 0.1)'
+                      background: 'rgba(255, 255, 255, 0.1)'
                     }
                   }}
                 >
