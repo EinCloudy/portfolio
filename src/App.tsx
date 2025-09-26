@@ -1,5 +1,5 @@
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { createTheme } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -58,6 +58,8 @@ const AnimatedRoutes = () => {
             <PrivacyPolicy />
           </PageTransition>
         } />
+        {/* Catch-All Route - leitet unbekannte Pfade zur Startseite weiter */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
   );

@@ -7,5 +7,18 @@ export default defineConfig({
         hmr: {
             overlay: false
         }
+    },
+    build: {
+        rollupOptions: {
+            output: {
+                // Optimierung für bessere Performance
+                manualChunks: {
+                    vendor: ['react', 'react-dom'],
+                    router: ['react-router-dom'],
+                    mui: ['@mui/material', '@mui/icons-material'],
+                    motion: ['framer-motion']
+                }
+            }
+        }
     }
 });
