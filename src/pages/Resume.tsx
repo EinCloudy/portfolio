@@ -193,7 +193,7 @@ const Resume = () => {
                     <strong>Nationality:</strong> German
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 1 }}>
-                    <strong>Driver's License:</strong> Class B, Class A2
+                    <strong>Driver's License:</strong> Class B, Class A
                   </Typography>
                 </Box>
               </Box>
