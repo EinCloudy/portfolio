@@ -256,25 +256,11 @@ const Projects = () => {
                     <CardActions sx={{ p: 3, pt: 0 }}>
                       <Button
                         size="medium"
-                        color="inherit"
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="outlined"
-                        sx={{ 
-                          borderRadius: '10px',
-                          background: 'rgba(255, 255, 255, 0.03)',
-                          border: '1px solid rgba(255, 255, 255, 0.1)',
-                          backdropFilter: 'blur(8px)',
-                          transition: 'all 0.3s ease',
-                          px: 3,
-                          '&:hover': {
-                            background: 'rgba(255, 255, 255, 0.07)',
-                            borderColor: 'rgba(255, 255, 255, 0.2)',
-                            transform: 'translateY(-2px)',
-                            boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)',
-                          }
-                        }}
+                        sx={{ px: 3 }}
                       >
                         Learn more
                       </Button>

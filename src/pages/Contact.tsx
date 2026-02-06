@@ -167,35 +167,11 @@ const Contact = () => {
     lineHeight: 1.3
   };
 
-  const buttonStyle = {
-    p: 1.5,
-    borderRadius: '10px',
-    backdropFilter: 'blur(8px)',
-    backgroundColor: 'rgba(255, 255, 255, 0.03)',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
-    color: 'rgba(255, 255, 255, 0.85)',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-    transition: 'all 0.3s ease',
+  const outlinedButtonSx = {
     justifyContent: 'flex-start',
     textAlign: 'left',
-    fontWeight: 500,
-    '&:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.07)',
-      backdropFilter: 'blur(12px)',
-      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)',
-      border: '1px solid rgba(255, 255, 255, 0.2)'
-    }
-  };
-
-  const primaryButtonStyle = {
-    ...buttonStyle,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    color: 'rgba(255, 255, 255, 0.95)',
-    fontWeight: 600,
-    '&:hover': {
-      ...buttonStyle['&:hover'],
-      backgroundColor: 'rgba(255, 255, 255, 0.15)'
-    }
+    py: 1.5,
+    px: 2,
   };
 
   return (
@@ -281,8 +257,11 @@ const Contact = () => {
                           href={item.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          variant="text"
-                          sx={'primary' in item ? primaryButtonStyle : buttonStyle}
+                          variant="outlined"
+                          sx={{
+                            ...outlinedButtonSx,
+                            ...('primary' in item && { fontWeight: 600 }),
+                          }}
                         >
                           {item.text}
                         </Button>

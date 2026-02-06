@@ -117,6 +117,20 @@ function App() {
               boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
             },
           },
+          contained: {
+            '&:hover': {
+              color: '#fff',
+            },
+          },
+          outlined: {
+            borderColor: 'rgba(255, 255, 255, 0.3)',
+            color: '#fff',
+            '&:hover': {
+              borderColor: 'primary.main',
+              backgroundColor: 'rgba(33, 150, 243, 0.12)',
+              color: '#fff',
+            },
+          },
         },
       },
       MuiCard: {

@@ -53,6 +53,13 @@ const Home = () => {
               to="/projects"
               variant="contained"
               size="large"
+              sx={{
+                color: '#fff',
+                '&:hover': {
+                  backgroundColor: 'primary.dark',
+                  color: '#fff',
+                },
+              }}
             >
               My Projects
             </Button>
