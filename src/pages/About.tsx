@@ -8,6 +8,19 @@ import SmartphoneIcon from '@mui/icons-material/Smartphone';
 import ScubaDivingIcon from '@mui/icons-material/ScubaDiving';
 
 const About = () => {
+  const calculateAge = (birthDateString: string) => {
+    const today = new Date();
+    const birthDate = new Date(birthDateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  };
+
+  const myAge = calculateAge('2004-02-18');
+
   const skillCategories = [
     {
       name: "Programming Languages",
@@ -15,7 +28,7 @@ const About = () => {
     },
     {
       name: "Web Technologies",
-      skills: ['HTML5', 'CSS3', 'React', 'Node.js',  "i18next", "Next.js", "Tailwind CSS"]
+      skills: ['HTML5', 'CSS3', 'React', 'Node.js', "i18next", "Next.js", "Tailwind CSS"]
     },
     {
       name: "Databases",
@@ -88,13 +101,13 @@ const About = () => {
   };
 
   const itemVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       y: 40,
       scale: 0.95
     },
-    visible: (i: number) => ({ 
-      opacity: 1, 
+    visible: (i: number) => ({
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
@@ -240,16 +253,16 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <Typography 
-          variant="h3" 
-          component="h1" 
+        <Typography
+          variant="h3"
+          component="h1"
           gutterBottom
           sx={sectionHeaderStyle}
         >
           About Me
         </Typography>
         <Typography variant="body1" paragraph>
-          Hello! I'm Joel Obi, a 21-year-old developer with a passion for technology and programming.
+          Hello! I'm Joel Obi, a {myAge}-year-old developer with a passion for technology and programming.
         </Typography>
         <Typography variant="body1" paragraph>
           My goal is to continuously expand my knowledge and discover new technologies.
@@ -265,8 +278,8 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Typography 
-            variant="h3" 
+          <Typography
+            variant="h3"
             component="h2"
             sx={sectionHeaderStyle}
           >
@@ -282,31 +295,31 @@ const About = () => {
         animate="visible"
         className="hobbies-container"
       >
-        <Box 
-          sx={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            gap: 3, 
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 3,
             mt: 2,
             justifyContent: 'center'
           }}
         >
           {hobbies.map((hobby, index) => (
-            <Box 
-              key={hobby.name} 
-              sx={{ 
+            <Box
+              key={hobby.name}
+              sx={{
                 flexBasis: { xs: '100%', sm: '45%', md: '28%', lg: '28%' },
                 minWidth: { xs: '100%', sm: '45%', md: '28%', lg: '28%' },
                 display: 'flex'
               }}
             >
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 whileHover="hover"
                 custom={index}
                 style={{ height: '100%', width: '100%' }}
               >
-                <Paper 
+                <Paper
                   elevation={0}
                   sx={{
                     ...hobbyCardStyle,
@@ -320,19 +333,19 @@ const About = () => {
                   <Box sx={hobbyIconStyle}>
                     {hobby.icon}
                   </Box>
-                  <Typography 
-                    variant="h6" 
+                  <Typography
+                    variant="h6"
                     component="h3"
-                    sx={{ 
+                    sx={{
                       fontWeight: 'bold',
                       mb: 1.5
                     }}
                   >
                     {hobby.name}
                   </Typography>
-                  <Typography 
-                    variant="body2" 
-                    sx={{ 
+                  <Typography
+                    variant="body2"
+                    sx={{
                       color: 'rgba(255, 255, 255, 0.7)',
                       lineHeight: 1.6,
                       fontSize: '0.9rem'
@@ -354,8 +367,8 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <Typography 
-            variant="h3" 
+          <Typography
+            variant="h3"
             component="h2"
             sx={sectionHeaderStyle}
           >
@@ -371,31 +384,31 @@ const About = () => {
         animate="visible"
         className="skills-container"
       >
-        <Box 
-          sx={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            gap: 4, 
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 4,
             mt: 2,
             justifyContent: 'center'
           }}
         >
           {skillCategories.map((category, index) => (
-            <Box 
-              key={category.name} 
-              sx={{ 
+            <Box
+              key={category.name}
+              sx={{
                 flexBasis: { xs: '100%', sm: '45%', md: '45%', lg: '22%' },
                 minWidth: { xs: '100%', sm: '45%', md: '45%', lg: '22%' },
                 display: 'flex'
               }}
             >
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 whileHover="hover"
                 custom={index}
                 style={{ height: '100%', width: '100%' }}
               >
-                <Paper 
+                <Paper
                   elevation={0}
                   sx={{
                     ...cardStyle,
@@ -404,16 +417,16 @@ const About = () => {
                     height: '100%'
                   }}
                 >
-                  <Typography 
-                    variant="h5" 
+                  <Typography
+                    variant="h5"
                     component="h3"
                     sx={cardTitleStyle}
                   >
                     {category.name}
                   </Typography>
-                  <Box sx={{ 
-                    display: 'flex', 
-                    flexDirection: 'column', 
+                  <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
                     gap: 1,
                     flexGrow: 1,
                     justifyContent: 'center'
@@ -448,8 +461,8 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <Typography 
-            variant="h3" 
+          <Typography
+            variant="h3"
             component="h2"
             sx={sectionHeaderStyle}
           >
@@ -465,31 +478,31 @@ const About = () => {
         animate="visible"
         className="tech-container"
       >
-        <Box 
-          sx={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            gap: 4, 
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 4,
             mt: 2,
             justifyContent: 'center'
           }}
         >
           {techCategories.map((category, index) => (
-            <Box 
-              key={category.name} 
-              sx={{ 
+            <Box
+              key={category.name}
+              sx={{
                 flexBasis: { xs: '100%', sm: '45%', md: '30%' },
                 minWidth: { xs: '100%', sm: '45%', md: '30%' },
                 display: 'flex'
               }}
             >
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 whileHover="hover"
                 custom={index}
                 style={{ height: '100%', width: '100%' }}
               >
-                <Paper 
+                <Paper
                   elevation={0}
                   sx={{
                     ...cardStyle,
@@ -502,16 +515,16 @@ const About = () => {
                     }
                   }}
                 >
-                  <Typography 
+                  <Typography
                     variant="h5"
                     component="h3"
                     sx={cardTitleStyle}
                   >
                     {category.name}
                   </Typography>
-                  <Box sx={{ 
-                    display: 'flex', 
-                    flexDirection: 'column', 
+                  <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
                     gap: 1,
                     flexGrow: 1,
                     justifyContent: 'center'
