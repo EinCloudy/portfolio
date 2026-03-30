@@ -80,12 +80,7 @@ const About = () => {
       name: "Content Creation",
       description: "I create digital content for social media platforms and enjoy the creative process.",
       icon: <YouTubeIcon sx={{ fontSize: 40 }} />
-    },
-    {
-      name: "Mobile Development",
-      description: "I develop mobile applications and enjoy creating user-friendly experiences.",
-      icon: <SmartphoneIcon sx={{ fontSize: 40 }} />
-    },
+    }
   ];
 
   const containerVariants = {
