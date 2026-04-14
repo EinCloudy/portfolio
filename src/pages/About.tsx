@@ -4,7 +4,6 @@ import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
 import ScubaDivingIcon from '@mui/icons-material/ScubaDiving';
 
 const About = () => {
